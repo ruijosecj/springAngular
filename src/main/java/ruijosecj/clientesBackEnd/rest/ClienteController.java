@@ -1,9 +1,12 @@
 package ruijosecj.clientesBackEnd.rest;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +38,11 @@ public class ClienteController {
 	public Cliente acharPorId(@PathVariable Integer id) {
 		return repository.findById(id)
 				.orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado."));
+	}
+	
+	@GetMapping
+	public List<Cliente> buscarTodos() {
+		return repository.findAll();
 	}
 	
 	@DeleteMapping("/{id}")

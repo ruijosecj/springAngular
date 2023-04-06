@@ -12,6 +12,6 @@ import ruijosecj.clientesBackEnd.model.entity.ServicoPrestado;
 @Repository
 public interface ServicoPrestadoRepository extends JpaRepository<ServicoPrestado, Integer> {
 	
-	@Query("select s from ServicoPrestado s join s.cliente c where UPPER(c.nome) like UPPER( :nome) and MONTH(s.dataServico) = :mes")
+	@Query("select s from ServicoPrestado s join s.cliente c where UPPER(c.nome) like UPPER( :nome) and MONTH(s.data) = :mes")
 	List<ServicoPrestado> findByNomeClienteAndMes(@Param("nome") String nome, @Param("mes") Integer mes);
 }

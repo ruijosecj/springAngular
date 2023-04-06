@@ -29,7 +29,7 @@ public class ServicoPrestado {
 	private BigDecimal valor;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataServico;
+	private LocalDate data;
 
 	public Integer getId() {
 		return id;
@@ -63,12 +63,12 @@ public class ServicoPrestado {
 		this.valor = valor;
 	}
 	
-	public LocalDate getDataServico() {
-		return dataServico;
+	public LocalDate getData() {
+		return data;
 	}
 
-	public void setDataServico(LocalDate dataServico) {
-		this.dataServico = dataServico;
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
 	@Override
